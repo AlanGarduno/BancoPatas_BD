@@ -28,7 +28,7 @@ public final class Conexion
         }
         catch(ClassNotFoundException | SQLException e)
         {
-            System.out.println("Error al conectar");
+            System.out.println("Error al conectar"+e);
         }
     }
     
