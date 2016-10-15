@@ -5,10 +5,35 @@
  */
 package ModelosBanco;
 
+import java.sql.Date;
+
 /**
  *
  * @author JCVELMON
  */
-public class Movimientos {
+public class Movimientos
+{
+    private int ID_Movimiento;
+    private Date Fecha;
+
+    public Movimientos(Date Fecha) {
+        this.Fecha = Fecha;
+    }
+
+    public Movimientos() {
+    }
+
+    public int getID_Movimiento() {
+        return ID_Movimiento;
+    }
+
+    public Date getFecha() {
+        return Fecha;
+    }
+
+    public void setFecha(Date Fecha) {
+        this.Fecha = Fecha;
+    }
+    
     
 }
