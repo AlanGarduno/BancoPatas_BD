@@ -16,6 +16,7 @@ public class ATM_princ extends javax.swing.JFrame {
      */
     public ATM_princ() {
         initComponents();
+        this.setTitle("Elige una Opción");
     }
 
     /**
@@ -145,6 +146,7 @@ public class ATM_princ extends javax.swing.JFrame {
         // TODO add your handling code here:
         Cambiar_NIP cmab= new Cambiar_NIP();
         cmab.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -214,6 +216,7 @@ public class ATM_princ extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ATM_princ.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

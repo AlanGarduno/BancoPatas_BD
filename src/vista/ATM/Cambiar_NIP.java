@@ -19,6 +19,7 @@ public class Cambiar_NIP extends javax.swing.JFrame {
      */
     public Cambiar_NIP() {
         initComponents();
+        this.setTitle("Cmabio de NIP");
     }
 
     /**
@@ -125,6 +126,10 @@ public class Cambiar_NIP extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Operacion Exitosa");
+        ATM_ses ses = new ATM_ses();
+        ses.setVisible(true);
+        dispose();
         
     }//GEN-LAST:event_jButton2ActionPerformed
 

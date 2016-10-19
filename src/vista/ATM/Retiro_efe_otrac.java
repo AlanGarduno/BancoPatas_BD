@@ -5,6 +5,8 @@
  */
 package vista.ATM;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author fernando
@@ -16,6 +18,7 @@ public class Retiro_efe_otrac extends javax.swing.JFrame {
      */
     public Retiro_efe_otrac() {
         initComponents();
+        this.setTitle("Retiro de efectivo");
     }
 
     /**
@@ -51,6 +54,11 @@ public class Retiro_efe_otrac extends javax.swing.JFrame {
         });
 
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -63,13 +71,12 @@ public class Retiro_efe_otrac extends javax.swing.JFrame {
                         .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addGap(35, 35, 35)
-                            .addComponent(jTextField1))
-                        .addComponent(jScrollPane1)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(35, 35, 35)
+                        .addComponent(jTextField1))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(69, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -95,7 +102,18 @@ public class Retiro_efe_otrac extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Operacion exitosa");
+        ATM_ses ses = new ATM_ses();
+        ses.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        ATM_ses ses = new ATM_ses();
+        ses.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

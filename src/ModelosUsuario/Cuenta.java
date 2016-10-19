@@ -9,6 +9,22 @@ package ModelosUsuario;
  *
  * @author JCVELMON
  */
-public class Cuenta {
+public class Cuenta 
+{
+    private int ID_Cuenta;
+    private int ID_Cliente;
+
+    public Cuenta() {
+    }
+
+    public int getID_Cuenta() {
+        return ID_Cuenta;
+    }
+
+    public int getID_Cliente() {
+        return ID_Cliente;
+    }
+    
+    
     
 }

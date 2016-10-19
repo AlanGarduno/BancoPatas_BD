@@ -5,6 +5,8 @@
  */
 package vista.ATM;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author fernando
@@ -16,6 +18,7 @@ public class Retiro_efe extends javax.swing.JFrame {
      */
     public Retiro_efe() {
         initComponents();
+        this.setTitle("Retiro de efectivo");
     }
 
     /**
@@ -42,8 +45,18 @@ public class Retiro_efe extends javax.swing.JFrame {
         jLabel1.setText("Seleccione la cantidad que desa retirar.");
 
         jButton1.setText("$100");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("$200");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("$50");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -53,12 +66,32 @@ public class Retiro_efe extends javax.swing.JFrame {
         });
 
         jButton4.setText("$500");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("$1,000");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Otra Cantidad");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Cancelar");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,7 +144,57 @@ public class Retiro_efe extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
+        ATM_ses ses = new ATM_ses();
+        ses.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
+        ATM_ses ses = new ATM_ses();
+        ses.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
+        ATM_ses ses = new ATM_ses();
+        ses.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
+        ATM_ses ses = new ATM_ses();
+        ses.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
+        ATM_ses ses = new ATM_ses();
+        ses.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        Retiro_efe_otrac reoc = new Retiro_efe_otrac();
+        reoc.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        ATM_ses ses =new ATM_ses();
+        ses.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -16,6 +16,7 @@ public class Cantidad_pagos extends javax.swing.JFrame {
      */
     public Cantidad_pagos() {
         initComponents();
+        this.setTitle("Pagos");
     }
 
     /**

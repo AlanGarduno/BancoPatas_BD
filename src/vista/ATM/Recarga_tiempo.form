@@ -26,9 +26,7 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Component id="jButton8" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jButton7" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+              <EmptySpace min="71" pref="478" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
@@ -76,10 +74,7 @@
                   <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="37" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="jButton8" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -116,15 +111,13 @@
         <Property name="text" type="java.lang.String" value="Virgin"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton7">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Aceptar"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="jButton8">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>

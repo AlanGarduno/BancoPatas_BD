@@ -16,6 +16,7 @@ public class Recarga_tiempo extends javax.swing.JFrame {
      */
     public Recarga_tiempo() {
         initComponents();
+        this.setTitle("Recarga Tiempo");
     }
 
     /**
@@ -33,7 +34,6 @@ public class Recarga_tiempo extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -51,9 +51,12 @@ public class Recarga_tiempo extends javax.swing.JFrame {
 
         jButton6.setText("Virgin");
 
-        jButton7.setText("Aceptar");
-
         jButton8.setText("Cancelar");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Seleccione la compañia telefonica a la cual va a hacer la recarga");
 
@@ -64,9 +67,7 @@ public class Recarga_tiempo extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jButton8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton7)
-                .addGap(71, 71, 71))
+                .addGap(71, 478, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,14 +104,19 @@ public class Recarga_tiempo extends javax.swing.JFrame {
                     .addComponent(jButton5)
                     .addComponent(jButton6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
-                    .addComponent(jButton8))
+                .addComponent(jButton8)
                 .addGap(33, 33, 33))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        ATM_ses se =new ATM_ses();
+        se.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,7 +160,6 @@ public class Recarga_tiempo extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

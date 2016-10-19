@@ -16,6 +16,7 @@ public class ATM_ses extends javax.swing.JFrame {
      */
     public ATM_ses() {
         initComponents();
+        this.setTitle("Sesión");
     }
 
     /**
@@ -125,6 +126,8 @@ public class ATM_ses extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ATM_ses.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
