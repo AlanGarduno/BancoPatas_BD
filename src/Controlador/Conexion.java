@@ -13,7 +13,6 @@ public final class Conexion
     private static final String user = "root";
     private static final String pass = "0709";
     private static final String url = "jdbc:mysql://localhost:3306/mydb";
-    
     public Conexion ()
     {
         conn = null;
