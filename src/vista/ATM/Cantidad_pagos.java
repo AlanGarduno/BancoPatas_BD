@@ -5,6 +5,8 @@
  */
 package vista.ATM;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author fernando
@@ -139,7 +141,10 @@ public class Cantidad_pagos extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+        JOptionPane.showMessageDialog(null, "Operacion exitosa");
+        ATM_ses ses = new ATM_ses();
+        ses.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

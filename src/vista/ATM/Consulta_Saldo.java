@@ -51,6 +51,8 @@ public class Consulta_Saldo extends javax.swing.JFrame {
             }
         });
 
+        jTextField1.setEditable(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
