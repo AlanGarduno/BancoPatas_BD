@@ -5,6 +5,8 @@
  */
 package vista.usuario;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author fernando
@@ -38,11 +40,22 @@ public class CAJ_ses extends javax.swing.JFrame {
 
         jLabel1.setText("Introduzca su NIP");
 
+        jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jPasswordField1KeyTyped(evt);
+            }
+        });
+
         jLabel2.setText("Introduzca su numero de empleado");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
+            }
+        });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
             }
         });
 
@@ -107,15 +120,48 @@ public class CAJ_ses extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        if(jTextField1.getText().length()==0 ){
+            JOptionPane.showMessageDialog(null, "Introduzca un valor");
+        }if( jPasswordField1.getText().length()==0){
+           JOptionPane.showMessageDialog(null, "Introduzca una contraseña correcta");
+    }
+        else{
         cajero caj= new cajero();
         caj.setVisible(true);
         dispose();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-        
+      
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+        // TODO add your handling code here:
+         char c=evt.getKeyChar();           
+        
+          if(Character.isLetter(c)) {
+              getToolkit().beep();
+              
+              evt.consume();             
+              
+              
+          }
+    }//GEN-LAST:event_jTextField1KeyTyped
+
+    private void jPasswordField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyTyped
+        // TODO add your handling code here:
+         char c=evt.getKeyChar();           
+        
+          if(Character.isLetter(c)) {
+              getToolkit().beep();
+              
+              evt.consume();             
+              
+              
+          }
+    }//GEN-LAST:event_jPasswordField1KeyTyped
 
     /**
      * @param args the command line arguments
