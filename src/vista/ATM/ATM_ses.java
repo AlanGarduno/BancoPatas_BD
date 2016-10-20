@@ -117,7 +117,7 @@ public class ATM_ses extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
           if(jTextField1.getText().length()==0 ){
-            JOptionPane.showMessageDialog(null, "Introduzca un valor");
+            JOptionPane.showMessageDialog(null, "Introduzca una Cuenta valida");
         }if( jPasswordField1.getText().length()==0){
            JOptionPane.showMessageDialog(null, "Introduzca una contraseña correcta");
     }

@@ -53,6 +53,23 @@ public class Cambiar_NIP extends javax.swing.JFrame {
                 jPasswordField1ActionPerformed(evt);
             }
         });
+        jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jPasswordField1KeyTyped(evt);
+            }
+        });
+
+        jPasswordField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jPasswordField2KeyTyped(evt);
+            }
+        });
+
+        jPasswordField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jPasswordField3KeyTyped(evt);
+            }
+        });
 
         jButton1.setText("Regresar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -126,12 +143,55 @@ public class Cambiar_NIP extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+         if(jPasswordField1.getText().length()==0 ){
+            JOptionPane.showMessageDialog(null, "Introduzca su NIP Actual");
+        }if( jPasswordField2.getText().length()==0){
+           JOptionPane.showMessageDialog(null, "Introduzca su nuevo NIP");
+        }if(jPasswordField3.getText().length()==0){
+            JOptionPane.showMessageDialog(null,"Re-indroduzca su nuevo NIP");
+        }
+        else{     
         JOptionPane.showMessageDialog(null, "Operacion Exitosa");
         ATM_ses ses = new ATM_ses();
         ses.setVisible(true);
         dispose();
+        }
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jPasswordField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyTyped
+        // TODO add your handling code here:
+         char c=evt.getKeyChar();           
+        
+          if(Character.isLetter(c)) {
+              getToolkit().beep();              
+              evt.consume();      
+            }
+    }//GEN-LAST:event_jPasswordField1KeyTyped
+
+    private void jPasswordField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField2KeyTyped
+        // TODO add your handling code here:
+         char c=evt.getKeyChar();         
+        
+          if(Character.isLetter(c)) {
+              getToolkit().beep();              
+              evt.consume();           
+              
+              
+          }
+    }//GEN-LAST:event_jPasswordField2KeyTyped
+
+    private void jPasswordField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField3KeyTyped
+        // TODO add your handling code here:
+         char c=evt.getKeyChar();           
+        
+          if(Character.isLetter(c)) {
+              getToolkit().beep();              
+              evt.consume();             
+              
+              
+          }
+    }//GEN-LAST:event_jPasswordField3KeyTyped
 
     /**
      * @param args the command line arguments
