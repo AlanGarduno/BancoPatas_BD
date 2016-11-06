@@ -25,6 +25,11 @@ public class Tarjeta
         this.ID_Cuenta = ID_Cuenta;
     }
 
+    public Tarjeta() {
+    }
+    
+    
+
     public int getID_Tarjeta() {
         return ID_Tarjeta;
     }

@@ -3,23 +3,35 @@ import com.mysql.jdbc.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 public class Controlador
 {
     
     private String tabla;
     private String campo;
-    private static Statement stm;
-    private static ResultSet rs;
+    private Conexion conexion = new Conexion(); 
+    private Connection conn;
+    private Statement stm;
+    private ResultSet rs;
     
 
     public Controlador() 
     {
-        
+       try
+       {
+           if((conn=conexion.getConnection()) == null)
+           {
+             JOptionPane.showMessageDialog(null,"ERROR");
+           }
+           stm = conn.createStatement();
+       }catch(Exception e)
+       {
+           e.printStackTrace();
+       }
     }
     
-    Conexion conn = new Conexion();
-    Connection con = conn.getConnection();
+
     
     public String getTabla() {
         return tabla;
@@ -39,47 +51,60 @@ public class Controlador
     
     public boolean insertar(String tabla, String campo, double valor) throws SQLException
     {
-        String sql = "INSERT INTO "+tabla+"("+campo+")"+"VALUES"+"("+valor+")";
-        stm = con.createStatement();
-        if(stm.execute(sql))
+        try
         {
+            String sql = "INSERT INTO "+tabla+"("+campo+")"+"VALUES"+"("+valor+")";
+            stm.executeUpdate(sql);
             return true;
+        }catch(Exception e)
+        {
+            e.printStackTrace();
+            return false;
         }
-        return false;
     }
-    
         
     public boolean insertar(String tabla, String campo, String valor) throws SQLException
     {
-        String sql = "INSERT INTO "+tabla+"("+campo+")"+"VALUES"+"("+valor+")";
-        stm = con.createStatement();
-        if(stm.execute(sql))
-        {
+        try{
+            String sql = "INSERT INTO "+tabla+"("+campo+")"+"VALUES"+"("+valor+")";
+            stm.executeUpdate(sql);
             return true;
+        }catch(Exception e)
+        {
+            e.printStackTrace();
+            return false;
         }
-        return false;
+
     }
     
-    public boolean consultar(String tabla, String campo) throws SQLException
+    public ResultSet consultar(String tabla, String campo) throws SQLException
     {
-        String sql = "SELECT FROM"+campo+" FROM"+tabla;
-        stm = con.createStatement();
-        if(stm.execute(sql))
+        try
         {
-            return true;
+            String sql = "SELECT FROM"+campo+" FROM"+tabla;
+            rs = stm.executeQuery(sql);
+            return rs;
+        }catch(Exception e)
+        {
+            e.printStackTrace();
+            return null;
         }
-        return false;
         
     }
     
-    public boolean buscar(String tabla, String campo, String condicion) throws SQLException
+    public ResultSet buscar(String tabla, String campo, String condicion) throws SQLException
     {
-        String sql = "SELECT "+campo+"FROM "+tabla+" WHERE "+condicion;
-        if(stm.execute(sql))
+        try
         {
-            return true;
+            String sql = "SELECT "+campo+" FROM "+tabla+" WHERE "+condicion;
+            rs = stm.executeQuery(sql);
+            return rs;
+        }catch(Exception e)
+        {
+            e.printStackTrace();
+            return null;
         }
-        return false;
+
     }
 
 }
