@@ -41,6 +41,16 @@ public class Seguro
     public double getMonto_Aegurado() {
         return Monto_Aegurado;
     }
+
+    public int getID_Cliente() {
+        return ID_Cliente;
+    }
+
+    public int getID_Direccion() {
+        return ID_Direccion;
+    }
+    
+    
     
     
     

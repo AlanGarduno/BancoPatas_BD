@@ -14,9 +14,9 @@ import java.sql.Date;
 public class Movimientos
 {
     private int ID_Movimiento;
-    private Date Fecha;
+    private String Fecha;
 
-    public Movimientos(Date Fecha) {
+    public Movimientos(String Fecha) {
         this.Fecha = Fecha;
     }
 
@@ -27,13 +27,14 @@ public class Movimientos
         return ID_Movimiento;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return Fecha;
     }
 
-    public void setFecha(Date Fecha) {
+    public void setFecha(String Fecha) {
         this.Fecha = Fecha;
     }
+    
     
     
 }

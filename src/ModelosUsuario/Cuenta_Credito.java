@@ -15,10 +15,10 @@ public class Cuenta_Credito
 {
     private double Monto; //Lo correcto seria saldo 
     private double Limite_Credito;
-    private Date Fecha_Corte;
+    private String Fecha_Corte;
     private int ID_Cuenta;
 
-    public Cuenta_Credito(double Monto, double Limite_Credito, Date Fecha_Corte, int ID_Cuenta) {
+    public Cuenta_Credito(double Monto, double Limite_Credito, String Fecha_Corte, int ID_Cuenta) {
         this.Monto = Monto;
         this.Limite_Credito = Limite_Credito;
         this.Fecha_Corte = Fecha_Corte;
@@ -36,7 +36,7 @@ public class Cuenta_Credito
         return Limite_Credito;
     }
 
-    public Date getFecha_Corte() {
+    public String getFecha_Corte() {
         return Fecha_Corte;
     }
 
@@ -52,7 +52,7 @@ public class Cuenta_Credito
         this.Limite_Credito = Limite_Credito;
     }
 
-    public void setFecha_Corte(Date Fecha_Corte) {
+    public void setFecha_Corte(String Fecha_Corte) {
         this.Fecha_Corte = Fecha_Corte;
     }
 

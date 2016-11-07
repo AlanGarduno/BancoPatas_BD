@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 package ModelosUsuario;
-
 import java.sql.Date;
-
+import Controlador.Controlador;
 /**
  *
  * @author JCVELMON
@@ -16,13 +15,16 @@ public class Tarjeta
     
     private int ID_Tarjeta;
     private int CVV;
-    private Date Vigencia;
+    private String Vigencia;
     private int ID_Cuenta;
+    private int PIN;
 
-    public Tarjeta(int CVV, Date Vigencia, int ID_Cuenta) {
+    public Tarjeta(int CVV, String Vigencia, int ID_Cuenta, int PIN) {
         this.CVV = CVV;
         this.Vigencia = Vigencia;
         this.ID_Cuenta = ID_Cuenta;
+        this.PIN = PIN;
+        
     }
 
     public Tarjeta() {
@@ -38,7 +40,7 @@ public class Tarjeta
         return CVV;
     }
 
-    public Date getVigencia() {
+    public String getVigencia() {
         return Vigencia;
     }
 
@@ -46,11 +48,23 @@ public class Tarjeta
         return ID_Cuenta;
     }
 
-    public void setVigencia(Date Vigencia) {
+    public void setVigencia(String Vigencia) {
         this.Vigencia = Vigencia;
     }
+
+    public int getPIN() {
+        return PIN;
+    }
+
+    public void setPIN(int PIN) {
+        this.PIN = PIN;
+    }
     
-    
-    
+    public void registrarTarjeta()
+    {
+        Controlador query = new Controlador();
+        String sql = "INSERT INTO tarjeta VALUES" +"(" +CVV+","+Vigencia+","+ID_Cuenta+","+PIN+")";
+        query.insertar(sql);
+    }
     
 }

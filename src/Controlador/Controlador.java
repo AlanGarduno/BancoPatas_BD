@@ -49,11 +49,10 @@ public class Controlador
         this.campo = campo;
     }
     
-    public boolean insertar(String tabla, String campo, double valor) throws SQLException
+    public boolean insertar(String sql)
     {
         try
         {
-            String sql = "INSERT INTO "+tabla+"("+campo+")"+"VALUES"+"("+valor+")";
             stm.executeUpdate(sql);
             return true;
         }catch(Exception e)
@@ -63,25 +62,11 @@ public class Controlador
         }
     }
         
-    public boolean insertar(String tabla, String campo, String valor) throws SQLException
-    {
-        try{
-            String sql = "INSERT INTO "+tabla+"("+campo+")"+"VALUES"+"("+valor+")";
-            stm.executeUpdate(sql);
-            return true;
-        }catch(Exception e)
-        {
-            e.printStackTrace();
-            return false;
-        }
-
-    }
     
-    public ResultSet consultar(String tabla, String campo) throws SQLException
+    public ResultSet consultar(String sql)
     {
         try
         {
-            String sql = "SELECT FROM"+campo+" FROM"+tabla;
             rs = stm.executeQuery(sql);
             return rs;
         }catch(Exception e)
@@ -90,21 +75,6 @@ public class Controlador
             return null;
         }
         
-    }
-    
-    public ResultSet buscar(String tabla, String campo, String condicion) throws SQLException
-    {
-        try
-        {
-            String sql = "SELECT "+campo+" FROM "+tabla+" WHERE "+condicion;
-            rs = stm.executeQuery(sql);
-            return rs;
-        }catch(Exception e)
-        {
-            e.printStackTrace();
-            return null;
-        }
-
     }
 
 }
