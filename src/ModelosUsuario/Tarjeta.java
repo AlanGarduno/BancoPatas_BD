@@ -49,7 +49,7 @@ public class Tarjeta
     }
 
     public void setVigencia(String Vigencia) {
-        this.Vigencia = Vigencia;
+        this.Vigencia = Vigencia;   
     }
 
     public int getPIN() {
