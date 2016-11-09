@@ -13,8 +13,8 @@ public class PruebaConexion
     {
         Conexion conn = new Conexion();
         Connection ref = conn.getConnection();
-        Cuenta c = new Cuenta();
-        Tarjeta tar = new Tarjeta(599,"2017-12-07",c.getID_Cuenta(),6000);
+       // Cuenta c = new Cuenta();
+        Tarjeta tar = new Tarjeta( 599,"1999"+"12"+"07",46,6123);
         tar.registrarTarjeta();
     }
 }

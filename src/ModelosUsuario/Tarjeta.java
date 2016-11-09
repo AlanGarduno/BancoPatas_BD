@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package ModelosUsuario;
-import java.sql.Date;
+import java.sql.*;
 import Controlador.Controlador;
 /**
  *
@@ -63,7 +63,7 @@ public class Tarjeta
     public void registrarTarjeta()
     {
         Controlador query = new Controlador();
-        String sql = "INSERT INTO tarjeta VALUES" +"(" +CVV+","+Vigencia+","+ID_Cuenta+","+PIN+")";
+        String sql = "INSERT INTO tarjeta VALUES" +"(" +ID_Tarjeta+","+CVV+","+Vigencia+","+ID_Cuenta+","+PIN+")";
         query.insertar(sql);
     }
     
