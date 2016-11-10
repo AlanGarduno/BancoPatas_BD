@@ -14,7 +14,7 @@ public class PruebaConexion
         Conexion conn = new Conexion();
         Connection ref = conn.getConnection();
        // Cuenta c = new Cuenta();
-        Tarjeta tar = new Tarjeta( 599,"1999"+"12"+"07",46,6123);
+        Tarjeta tar = new Tarjeta( 2 ,589,"1999"+"12"+"07",46,6123);
         tar.registrarTarjeta();
     }
 }

@@ -19,7 +19,8 @@ public class Tarjeta
     private int ID_Cuenta;
     private int PIN;
 
-    public Tarjeta(int CVV, String Vigencia, int ID_Cuenta, int PIN) {
+    public Tarjeta(int ID_Tarjeta,int CVV, String Vigencia, int ID_Cuenta, int PIN) {
+        this.ID_Tarjeta = ID_Tarjeta;
         this.CVV = CVV;
         this.Vigencia = Vigencia;
         this.ID_Cuenta = ID_Cuenta;
@@ -34,6 +35,10 @@ public class Tarjeta
 
     public int getID_Tarjeta() {
         return ID_Tarjeta;
+    }
+    
+    public void setID_Tarjeta(int ID_Tarjeta){
+        this.ID_Tarjeta= ID_Tarjeta;
     }
 
     public int getCVV() {
