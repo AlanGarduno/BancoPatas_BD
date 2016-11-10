@@ -5,6 +5,7 @@
  */
 package Controlador;
 import ModelosBanco.*;
+import ModelosUsuario.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import vista.ATM.*;
@@ -17,6 +18,7 @@ public class ControladorATM implements ActionListener{
     ATM_ses Vista_ATM=new ATM_ses();
     CajeroATMDAO cajdao= new CajeroATMDAO();
     CajeroATM caj =new CajeroATM();
+    Tarjeta tarj = new Tarjeta();
     
     public ControladorATM(ATM_ses Vista_ATM, CajeroATMDAO cajdao ){
         this.Vista_ATM=Vista_ATM;
@@ -29,9 +31,9 @@ public class ControladorATM implements ActionListener{
     }
       
     public void actionPerformed(ActionEvent e) {
-        String terjeta= Vista_ATM.jTextField1.getText();
+        String tarjeta= Vista_ATM.jTextField1.getText();
         String contraseña= String.valueOf(Vista_ATM.jPasswordField1.getPassword());
-        CajeroATM = cajdao.Registrarcajero(caj)
+        caj = cajdao.login(tarjeta, contraseña);
     }
    
     

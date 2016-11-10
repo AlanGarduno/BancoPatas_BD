@@ -12,7 +12,7 @@ import java.sql.*;
  * @author fernando
  */
 public class CajeroATMDAO {
-    public void  VerificarCueta(CajeroATM Ncajero){
+    public void  login(CajeroATM Ncajero){
          Conexion conexion = new Conexion(); 
          try{
              Statement estado= conexion.getConnection().createStatement();
