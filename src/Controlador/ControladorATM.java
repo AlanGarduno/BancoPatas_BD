@@ -33,7 +33,7 @@ public class ControladorATM implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         String tarjeta= Vista_ATM.jTextField1.getText();
         String contraseña= String.valueOf(Vista_ATM.jPasswordField1.getPassword());
-        caj = cajdao.login(tarjeta, contraseña);
+        //caj = cajdao.login(tarjeta, contraseña);
     }
    
     

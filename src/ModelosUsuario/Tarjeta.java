@@ -5,7 +5,9 @@
  */
 package ModelosUsuario;
 import java.sql.*;
-import Controlador.Controlador;
+import Controlador.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author JCVELMON
@@ -30,6 +32,14 @@ public class Tarjeta
 
     public Tarjeta() {
     }
+
+    public void setID_Tarjeta(int ID_Tarjeta) {
+        this.ID_Tarjeta = ID_Tarjeta;
+    }
+
+    public void setCVV(int CVV) {
+        this.CVV = CVV;
+    }
     
     
 
@@ -37,10 +47,6 @@ public class Tarjeta
         return ID_Tarjeta;
     }
     
-    public void setID_Tarjeta(int ID_Tarjeta){
-        this.ID_Tarjeta= ID_Tarjeta;
-    }
-
     public int getCVV() {
         return CVV;
     }
@@ -70,6 +76,30 @@ public class Tarjeta
         Controlador query = new Controlador();
         String sql = "INSERT INTO tarjeta VALUES" +"(" +ID_Tarjeta+","+CVV+","+Vigencia+","+ID_Cuenta+","+PIN+")";
         query.insertar(sql);
+    }
+    
+    public void cambiarNIP(int nipActual, int nipNuevo)
+    {
+        int camp = 0;
+        String update = null;
+        ResultSet rs;
+        Controlador query = new Controlador();
+        String sql = "SELECT * FROM tarjeta WHERE PIN ='"+nipActual+"'";
+        rs = query.consultar(sql);
+        try {
+            while(rs.next())
+            {
+                camp =rs.getInt("PIN");
+            }
+            if(camp == nipActual)
+            {
+                update = "UPDATE tarjeta SET PIN ='"+nipNuevo+"' WHERE PIN = '"+nipActual+"'";
+                query.insertar(update);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Tarjeta.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
     
 }

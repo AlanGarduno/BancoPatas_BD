@@ -5,6 +5,7 @@
  */
 package vista.ATM;
 
+import ModelosUsuario.*;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.OK_OPTION;
 
@@ -145,13 +146,26 @@ public class Cambiar_NIP extends javax.swing.JFrame {
         // TODO add your handling code here:
          if(jPasswordField1.getText().length()==0 ){
             JOptionPane.showMessageDialog(null, "Introduzca su NIP Actual");
-        }if( jPasswordField2.getText().length()==0){
+        }if(jPasswordField2.getText().length()==0){
            JOptionPane.showMessageDialog(null, "Introduzca su nuevo NIP");
         }if(jPasswordField3.getText().length()==0){
             JOptionPane.showMessageDialog(null,"Re-indroduzca su nuevo NIP");
         }
-        else{     
-        JOptionPane.showMessageDialog(null, "Operacion Exitosa");
+        else
+        {
+        int nA =Integer.parseInt(jPasswordField1.getText()); 
+        int pN =Integer.parseInt(jPasswordField2.getText());
+        int pN2 =Integer.parseInt(jPasswordField3.getText());
+        if(pN == pN2)
+        {
+            Tarjeta tar = new Tarjeta();
+            tar.cambiarNIP(nA,pN2);
+            JOptionPane.showMessageDialog(null, "Operacion Exitosa");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "EL NIP no coicide");
+        }
         ATM_ses ses = new ATM_ses();
         ses.setVisible(true);
         dispose();
