@@ -7,6 +7,7 @@ package Controlador;
 import ModelosBanco.*;
 import ModelosUsuario.*;
 import java.awt.event.*;
+import java.sql.Connection;
 import javax.swing.*;
 import vista.ATM.*;
 
@@ -18,13 +19,14 @@ public class ControladorATM implements ActionListener{
     ATM_ses sesATM=new ATM_ses();
     CajeroATMDAO cajdao= new CajeroATMDAO();
     CajeroATM caj =new CajeroATM();
-    Tarjeta tarjeta = new Tarjeta();
+    Tarjeta tarj = new Tarjeta();
     ATM_princ menuATM = new ATM_princ();
+    Conexion conexion=new Conexion();
     
     public ControladorATM(ATM_ses sesATM, CajeroATMDAO cajdao ){
         this.sesATM=sesATM;
         this.cajdao=cajdao;
-        this.tarjeta=tarjeta;
+        this.tarj=tarj;
         this.sesATM.jButton1.addActionListener(this);        
     }
     
@@ -33,17 +35,15 @@ public class ControladorATM implements ActionListener{
     }
       
     public void actionPerformed(ActionEvent e) {
-        //sesefsef
+        Connection Conexion = conexion.getConnection();
 
         String tarjeta= sesATM.Tarjeta.getText();
         String contraseña= String.valueOf(sesATM.Constraseña.getPassword());
-        //caj = cajdao.login(tarjeta, contraseña);
+        tarj = cajdao.Login(tarjeta, contraseña);
     
 
         String tar = sesATM.Tarjeta.getText();
-        //int tar = Integer.parseInt(tarjeta)
         String cont = String.valueOf(sesATM.Constraseña.getPassword());
-       // tarjeta = cajdao.Login(tar, cont);
         if(tarjeta==null){
             JOptionPane.showMessageDialog(sesATM, "Datos incorrectos.");
            
