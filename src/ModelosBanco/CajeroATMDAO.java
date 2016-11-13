@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package ModelosBanco;
-import Controlador.Conexion;
+import Controlador.*;
+import ModelosUsuario.*;
 import java.sql.*;
 
 /**
@@ -12,14 +13,41 @@ import java.sql.*;
  * @author fernando
  */
 public class CajeroATMDAO {
-    public void  login(CajeroATM Ncajero){
-         Conexion conexion = new Conexion(); 
+    Conexion  conexion;
+    
+    public void CajeroATMDAO(){
+        conexion=new Conexion();
+    }
+    public void Login(String tarj, String Cont){
+        Tarjeta tarjeta;
+        tarjeta = null;
+         Connection Conexion = conexion.getConnection();
          try{
-             Statement estado= conexion.getConnection().createStatement();
-             estado.executeUpdate("INSERT INTO CajeroATM Values ('"+Ncajero.getDinero_Disponible()+ "','"+Ncajero.getSucursal_ID()+"')");
+             PreparedStatement ps = Conexion.prepareStatement("SELECT ID_Tarjeta, PIN from tarjeta WHERE Tarjeta=? and Contraseña=?");
+             ps.setString(1, tarj);
+             ps.setString(2, Cont);
+             ResultSet rs =ps.executeQuery();
+             if(rs.next()){
+                 tarjeta= new Tarjeta();
+                 tarjeta.setID_Tarjeta(rs.getInt(1));
+                 tarjeta.setCVV(rs.getInt(2));
+                 tarjeta.setVigencia(rs.getString(3));
+                 tarjeta.setID_Cuenta(rs.getInt(4));
+                 tarjeta.setPIN(rs.getInt(5));                 
+                // return tarjeta;
+             }
+             
          }catch (SQLException e){
                 
          }
+        //return tarjeta;
     }
+
+//    public Tarjeta Login(String tarjeta, String conttraseña) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
+
+    
     
 }

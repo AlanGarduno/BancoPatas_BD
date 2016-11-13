@@ -35,8 +35,8 @@ public class ATM_ses extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        Tarjeta = new javax.swing.JTextField();
+        Constraseña = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Sesion"); // NOI18N
@@ -52,25 +52,25 @@ public class ATM_ses extends javax.swing.JFrame {
 
         jLabel1.setText("Introduzca su NIP");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        Tarjeta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                TarjetaActionPerformed(evt);
             }
         });
-        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+        Tarjeta.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField1KeyTyped(evt);
+                TarjetaKeyTyped(evt);
             }
         });
 
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        Constraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                ConstraseñaActionPerformed(evt);
             }
         });
-        jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+        Constraseña.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jPasswordField1KeyTyped(evt);
+                ConstraseñaKeyTyped(evt);
             }
         });
 
@@ -86,9 +86,9 @@ public class ATM_ses extends javax.swing.JFrame {
                 .addGap(68, 68, 68)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                    .addComponent(Tarjeta, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
                     .addComponent(jLabel1)
-                    .addComponent(jPasswordField1))
+                    .addComponent(Constraseña))
                 .addContainerGap(83, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -97,11 +97,11 @@ public class ATM_ses extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Tarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Constraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -110,29 +110,29 @@ public class ATM_ses extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void ConstraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConstraseñaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_ConstraseñaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-          if(jTextField1.getText().length()==0 ){
-            JOptionPane.showMessageDialog(null, "Introduzca una Cuenta valida");
-        }if( jPasswordField1.getText().length()==0){
-           JOptionPane.showMessageDialog(null, "Introduzca una contraseña correcta");
-    }
-        else{     
-        ATM_princ ses = new ATM_princ();
-        ses.setVisible(true);
-        dispose();
-        }
+//          if(Tarjeta.getText().length()==0 ){
+//            JOptionPane.showMessageDialog(null, "Introduzca una Cuenta valida");
+//        }if( Constraseña.getText().length()==0){
+//           JOptionPane.showMessageDialog(null, "Introduzca una contraseña correcta");
+//    }
+//        else{     
+//        ATM_princ ses = new ATM_princ();
+//        ses.setVisible(true);
+//       
+//        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void TarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TarjetaActionPerformed
         // TODO add your handling code here:        
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_TarjetaActionPerformed
 
-    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+    private void TarjetaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TarjetaKeyTyped
         // TODO add your handling code here:
         char c=evt.getKeyChar();           
         
@@ -143,9 +143,9 @@ public class ATM_ses extends javax.swing.JFrame {
               
               
           }
-    }//GEN-LAST:event_jTextField1KeyTyped
+    }//GEN-LAST:event_TarjetaKeyTyped
 
-    private void jPasswordField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyTyped
+    private void ConstraseñaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ConstraseñaKeyTyped
         // TODO add your handling code here:
          char c=evt.getKeyChar();           
         
@@ -155,7 +155,7 @@ public class ATM_ses extends javax.swing.JFrame {
               evt.consume();    
           }
       
-    }//GEN-LAST:event_jPasswordField1KeyTyped
+    }//GEN-LAST:event_ConstraseñaKeyTyped
 
     /**
      * @param args the command line arguments
@@ -196,10 +196,10 @@ public class ATM_ses extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JPasswordField Constraseña;
+    public javax.swing.JTextField Tarjeta;
     public javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    public javax.swing.JPasswordField jPasswordField1;
-    public javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,8 +6,8 @@
 package Controlador;
 import ModelosBanco.*;
 import ModelosUsuario.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+import javax.swing.*;
 import vista.ATM.*;
 
 /**
@@ -15,15 +15,17 @@ import vista.ATM.*;
  * @author fernando
  */
 public class ControladorATM implements ActionListener{
-    ATM_ses Vista_ATM=new ATM_ses();
+    ATM_ses sesATM=new ATM_ses();
     CajeroATMDAO cajdao= new CajeroATMDAO();
     CajeroATM caj =new CajeroATM();
-    Tarjeta tarj = new Tarjeta();
+    Tarjeta tarjeta = new Tarjeta();
+    ATM_princ menuATM = new ATM_princ();
     
-    public ControladorATM(ATM_ses Vista_ATM, CajeroATMDAO cajdao ){
-        this.Vista_ATM=Vista_ATM;
+    public ControladorATM(ATM_ses sesATM, CajeroATMDAO cajdao ){
+        this.sesATM=sesATM;
         this.cajdao=cajdao;
-        this.Vista_ATM.jButton1.addActionListener(this);        
+        this.tarjeta=tarjeta;
+        this.sesATM.jButton1.addActionListener(this);        
     }
     
     public void Iniciar_ses_atm(){
@@ -31,10 +33,26 @@ public class ControladorATM implements ActionListener{
     }
       
     public void actionPerformed(ActionEvent e) {
-        String tarjeta= Vista_ATM.jTextField1.getText();
-        String contraseña= String.valueOf(Vista_ATM.jPasswordField1.getPassword());
+
+        String tarjeta= sesATM.Tarjeta.getText();
+        String contraseña= String.valueOf(sesATM.Constraseña.getPassword());
         //caj = cajdao.login(tarjeta, contraseña);
-    }
-   
     
+
+        String tar = sesATM.Tarjeta.getText();
+        //int tar = Integer.parseInt(tarjeta)
+        String cont = String.valueOf(sesATM.Constraseña.getPassword());
+       // tarjeta = cajdao.Login(tar, cont);
+        if(tarjeta==null){
+            JOptionPane.showMessageDialog(sesATM, "Datos incorrectos.");
+           
+        }else{     
+            JOptionPane.showMessageDialog(sesATM, "Bienvenido", "Bienvenido", 1);
+            menuATM.setVisible(true);
+            sesATM.setVisible(false);
+        }
+        
+
+   
+    }
 }

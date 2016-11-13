@@ -16,10 +16,18 @@ public class Tarjeta
 {
     
     private int ID_Tarjeta;
-    private int CVV;
+    private int CVV;   
     private String Vigencia;
     private int ID_Cuenta;
     private int PIN;
+    
+    public Tarjeta(){
+        ID_Tarjeta =0;
+        CVV= 0;
+        Vigencia="";
+        ID_Cuenta=0;
+        PIN=0;
+    }
 
     public Tarjeta(int ID_Tarjeta,int CVV, String Vigencia, int ID_Cuenta, int PIN) {
         this.ID_Tarjeta = ID_Tarjeta;
@@ -30,18 +38,25 @@ public class Tarjeta
         
     }
 
-    public Tarjeta() {
+    
+    
+     public void setCVV(int CVV) {
+        this.CVV = CVV;
     }
+
 
     public void setID_Tarjeta(int ID_Tarjeta) {
         this.ID_Tarjeta = ID_Tarjeta;
     }
 
-    public void setCVV(int CVV) {
-        this.CVV = CVV;
+ 
+    
+    
+
+    public void setID_Cuenta(int ID_Cuenta) {
+        this.ID_Cuenta = ID_Cuenta;
     }
-    
-    
+
 
     public int getID_Tarjeta() {
         return ID_Tarjeta;
