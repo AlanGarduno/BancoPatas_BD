@@ -24,7 +24,7 @@ public class CajeroATM
         this.Sucursal_ID = Sucursal_ID;
     }
 
-  
+    
 
     public int getID_CajeroATM() {
         return ID_CajeroATM;
