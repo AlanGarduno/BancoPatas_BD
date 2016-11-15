@@ -7,32 +7,33 @@ package ModelosBanco;
 import Controlador.*;
 import ModelosUsuario.*;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author fernando
  */
 public class CajeroATMDAO {
-    Conexion  conexion;
+    Conexion  conexion=new Conexion();
     
     public void CajeroATMDAO(){
-        Conexion conexion=new Conexion();
+        
     }
     public Tarjeta Login(String tarj, String Cont){
-        Tarjeta tarjeta;
-        tarjeta = null;
-        System.out.println("1aqui");
-         Connection Conexion = conexion.getConnection();
-         System.out.println("1");
-       // int tar = Integer.parseInt(tarj);
-       // int contr = Integer.parseInt(Cont);
+        
+        
+        Tarjeta tarjeta = null ;
+        System.out.println("1");
+        Connection Conexion = conexion.getConnection();
+         System.out.println("2");
          try{
              PreparedStatement ps = Conexion.prepareStatement("SELECT ID_Tarjeta, PIN from tarjeta WHERE Tarjeta=? and Contraseña=?");
              ps.setString(1, tarj);
              ps.setString(2, Cont);
              ResultSet rs =ps.executeQuery();
              if(rs.next()){
-                 tarjeta= new Tarjeta();
+                 tarjeta = new Tarjeta();
                  tarjeta.setID_Tarjeta(rs.getInt(1));
                  tarjeta.setCVV(rs.getInt(2));
                  tarjeta.setVigencia(rs.getString(3));
@@ -42,18 +43,14 @@ public class CajeroATMDAO {
              }
              
          }catch (SQLException e){
+             
+             
                 
          }
          return tarjeta;
     }
 
-//    public Tarjeta Login(String tarjeta, String conttraseña) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
 
- //   public CajeroATM login(String tarjeta, String contraseña) {
-     //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-   // }
 
 
     

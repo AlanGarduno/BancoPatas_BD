@@ -17,6 +17,9 @@ public class CajeroATM
     
     public CajeroATM(){
         
+     ID_CajeroATM=0;
+     Dinero_Disponible=0;
+     Sucursal_ID=0;
     }
 
     public CajeroATM(double Dinero_Disponible, int Sucursal_ID) {

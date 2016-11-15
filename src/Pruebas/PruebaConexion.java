@@ -13,14 +13,16 @@ public class PruebaConexion
 
     public static void main(String[] args) throws SQLException
     {
-        Conexion conn = new Conexion();
-        Connection ref = conn.getConnection();
+        
+       
        // Cuenta c = new Cuenta();
         //Tarjeta tar = new Tarjeta( 23 ,589,"1999"+"12"+"07",46,6123);
         //tar.registrarTarjeta();
         ATM_ses ATMlog = new ATM_ses();
         CajeroATMDAO cajerodao= new CajeroATMDAO();
-        ControladorATM controlcajero = new ControladorATM(ATMlog, cajerodao);
+        Tarjeta tarj= new Tarjeta();
+        CajeroATM cajeroatm=new CajeroATM();
+        ControladorATM controlcajero = new ControladorATM(ATMlog, cajerodao,cajeroatm, tarj );
         ATMlog.setVisible(true);
         
     }

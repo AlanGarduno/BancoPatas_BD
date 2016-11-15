@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 public class Tarjeta 
 {
     
+    Conexion  conexion= new Conexion();
     private int ID_Tarjeta;
     private int CVV;   
     private String Vigencia;
@@ -38,6 +39,7 @@ public class Tarjeta
         
     }
 
+    
     
     
      public void setCVV(int CVV) {
@@ -116,5 +118,6 @@ public class Tarjeta
         }
 
     }
+   
     
 }

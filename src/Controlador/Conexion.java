@@ -4,6 +4,7 @@ package Controlador;
 
 import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public final class Conexion 
@@ -13,6 +14,8 @@ public final class Conexion
     private static final String user = "root";
     private static final String pass = "root";
     private static final String url = "jdbc:mysql://localhost:3306/mydb";
+
+   
     public Conexion ()
     {
         conn = null;
