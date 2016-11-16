@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package vista.ATM;
-
+import ModelosUsuario.*;
 /**
  *
  * @author fernando
@@ -15,7 +15,10 @@ public class Consulta_Saldo extends javax.swing.JFrame {
      * Creates new form Consulta_Saldo
      */
     public Consulta_Saldo() {
+        
         initComponents();
+        Cuenta_Debito cd = new Cuenta_Debito();
+        jTextField1.setText(Double.toString(cd.consultaSaldo()));  
     }
 
     /**

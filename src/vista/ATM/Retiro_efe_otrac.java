@@ -5,6 +5,9 @@
  */
 package vista.ATM;
 
+import ModelosBanco.Movimientos;
+import ModelosUsuario.Cuenta_Debito;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,6 +19,7 @@ public class Retiro_efe_otrac extends javax.swing.JFrame {
     /**
      * Creates new form Retiro_efe_otrac
      */
+    Date fecha;
     public Retiro_efe_otrac() {
         initComponents();
         this.setTitle("Retiro de efectivo");
@@ -102,6 +106,11 @@ public class Retiro_efe_otrac extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Cuenta_Debito cd = new Cuenta_Debito();
+        cd.retiroEfectivo(Double.parseDouble(jTextField1.getText()));
+        String f = Integer.toString(fecha.getYear()) + Integer.toString(fecha.getMonth()) + Integer.toString(fecha.getDay()); 
+        Movimientos m = new Movimientos(cd.getID_Cuenta(),f,Double.parseDouble(jTextField1.getText()));
+        m.registrarMovimiento();
         JOptionPane.showMessageDialog(null, "Operacion exitosa");
         ATM_ses ses = new ATM_ses();
         ses.setVisible(true);

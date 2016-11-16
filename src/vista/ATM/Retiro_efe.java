@@ -6,6 +6,9 @@
 package vista.ATM;
 
 import javax.swing.JOptionPane;
+import ModelosBanco.*;
+import ModelosUsuario.*;
+import java.util.Date;
 
 /**
  *
@@ -16,6 +19,10 @@ public class Retiro_efe extends javax.swing.JFrame {
     /**
      * Creates new form Retiro_efe
      */
+    Cuenta_Debito cd;
+    Movimientos m; 
+    Date fecha;
+    
     public Retiro_efe() {
         initComponents();
         this.setTitle("Retiro de efectivo");
@@ -144,6 +151,11 @@ public class Retiro_efe extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        cd = new Cuenta_Debito();
+        cd.retiroEfectivo(50);
+        String f = Integer.toString(fecha.getYear()) + Integer.toString(fecha.getMonth()) + Integer.toString(fecha.getDay()); 
+        m = new Movimientos(cd.getID_Cuenta(),f,50);
+        m.registrarMovimiento();
         JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
         ATM_ses ses = new ATM_ses();
         ses.setVisible(true);
@@ -152,6 +164,11 @@ public class Retiro_efe extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        cd = new Cuenta_Debito();
+        cd.retiroEfectivo(100);
+        String f = Integer.toString(fecha.getYear()) + Integer.toString(fecha.getMonth()) + Integer.toString(fecha.getDay()); 
+        m = new Movimientos(cd.getID_Cuenta(),f,100);
+        m.registrarMovimiento();
         JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
         ATM_ses ses = new ATM_ses();
         ses.setVisible(true);
@@ -160,6 +177,11 @@ public class Retiro_efe extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        cd = new Cuenta_Debito();
+        cd.retiroEfectivo(200);
+        String f = Integer.toString(fecha.getYear()) + Integer.toString(fecha.getMonth()) + Integer.toString(fecha.getDay()); 
+        m = new Movimientos(cd.getID_Cuenta(),f,200);
+        m.registrarMovimiento();
         JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
         ATM_ses ses = new ATM_ses();
         ses.setVisible(true);
@@ -168,6 +190,11 @@ public class Retiro_efe extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        cd = new Cuenta_Debito();
+        cd.retiroEfectivo(500);
+        String f = Integer.toString(fecha.getYear()) + Integer.toString(fecha.getMonth()) + Integer.toString(fecha.getDay()); 
+        m = new Movimientos(cd.getID_Cuenta(),f,500);
+        m.registrarMovimiento();
         JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
         ATM_ses ses = new ATM_ses();
         ses.setVisible(true);
@@ -176,6 +203,11 @@ public class Retiro_efe extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        cd = new Cuenta_Debito();
+        cd.retiroEfectivo(1000);
+        String f = Integer.toString(fecha.getYear()) + Integer.toString(fecha.getMonth()) + Integer.toString(fecha.getDay()); 
+        m = new Movimientos(cd.getID_Cuenta(),f,1000);
+        m.registrarMovimiento();
         JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
         ATM_ses ses = new ATM_ses();
         ses.setVisible(true);
