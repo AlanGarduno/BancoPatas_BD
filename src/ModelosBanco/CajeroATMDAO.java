@@ -26,7 +26,7 @@ public class CajeroATMDAO {
         Tarjeta tarjeta = null ;
         Connection Conexion = conexion.getConnection();
         try{
-             PreparedStatement ps = Conexion.prepareStatement("SELECT ID_Tarjeta, PIN from tarjeta WHERE Tarjeta=? and Contraseña=?");
+             PreparedStatement ps = Conexion.prepareStatement("SELECT ID_Tarjeta, PIN from tarjeta WHERE Tarjeta= tarj and Contraseña=Cont");
              ps.setString(1, tarj);
              ps.setString(2, Cont);
              
