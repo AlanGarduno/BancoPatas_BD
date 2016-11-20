@@ -7,8 +7,8 @@ package ModelosBanco;
 import Controlador.*;
 import ModelosUsuario.*;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.*;
+
 
 /**
  *
@@ -24,13 +24,12 @@ public class CajeroATMDAO {
         
         
         Tarjeta tarjeta = null ;
-        System.out.println("1");
         Connection Conexion = conexion.getConnection();
-         System.out.println("2");
-         try{
+        try{
              PreparedStatement ps = Conexion.prepareStatement("SELECT ID_Tarjeta, PIN from tarjeta WHERE Tarjeta=? and Contraseña=?");
              ps.setString(1, tarj);
              ps.setString(2, Cont);
+             
              ResultSet rs =ps.executeQuery();
              if(rs.next()){
                  tarjeta = new Tarjeta();
@@ -38,21 +37,17 @@ public class CajeroATMDAO {
                  tarjeta.setCVV(rs.getInt(2));
                  tarjeta.setVigencia(rs.getString(3));
                  tarjeta.setID_Cuenta(rs.getInt(4));
-                 tarjeta.setPIN(rs.getInt(5));                 
+                 tarjeta.setPIN(rs.getInt(5));   
+                 System.out.println("Este es la cuenta "+tarjeta.getID_Tarjeta());
                  return tarjeta ;
-             }
+                }
              
-         }catch (SQLException e){
+            }catch (SQLException e){
              
-             
+             return null;
                 
-         }
+            }
          return tarjeta;
-    }
-
-
-
-
-    
+    }  
     
 }

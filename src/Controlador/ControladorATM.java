@@ -21,7 +21,7 @@ public class ControladorATM implements ActionListener{
     CajeroATM caj= new CajeroATM();
     Tarjeta tarj = new Tarjeta();
     ATM_princ menuATM = new ATM_princ();
-    Conexion conexion=new Conexion();
+    
     
     public ControladorATM(ATM_ses sesATM, CajeroATMDAO cajdao, CajeroATM caj,Tarjeta tarj){
         this.caj = caj;
@@ -35,6 +35,7 @@ public class ControladorATM implements ActionListener{
         
     }
       
+    @Override
     public void actionPerformed(ActionEvent e) {
         
         String tarjeta= sesATM.Tarjeta.getText();

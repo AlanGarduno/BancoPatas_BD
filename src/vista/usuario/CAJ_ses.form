@@ -84,7 +84,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Introduzca su NIP"/>
+            <Property name="text" type="java.lang.String" value="Introduzca su clave"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JPasswordField" name="jPasswordField1">
