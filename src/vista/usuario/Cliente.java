@@ -46,6 +46,8 @@ public class Cliente extends javax.swing.JFrame {
         CURP = new javax.swing.JTextField();
         RFC = new javax.swing.JTextField();
         IDsuc = new javax.swing.JTextField();
+        Registrar = new javax.swing.JButton();
+        salir = new javax.swing.JButton();
         Consultaclie = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         Idsuc = new javax.swing.JTextField();
@@ -82,6 +84,20 @@ public class Cliente extends javax.swing.JFrame {
             }
         });
 
+        Registrar.setText("Registrar");
+        Registrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegistrarActionPerformed(evt);
+            }
+        });
+
+        salir.setText("Salir");
+        salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout RegistroclieLayout = new javax.swing.GroupLayout(Registroclie);
         Registroclie.setLayout(RegistroclieLayout);
         RegistroclieLayout.setHorizontalGroup(
@@ -89,16 +105,6 @@ public class Cliente extends javax.swing.JFrame {
             .addGroup(RegistroclieLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(RegistroclieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RegistroclieLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(Dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Mes, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(RegistroclieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(AÑO, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(RegistroclieLayout.createSequentialGroup()
                         .addGroup(RegistroclieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -118,7 +124,23 @@ public class Cliente extends javax.swing.JFrame {
                         .addGroup(RegistroclieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(CURP)
                             .addComponent(RFC)
-                            .addComponent(IDsuc, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE))))
+                            .addComponent(IDsuc, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)))
+                    .addGroup(RegistroclieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, RegistroclieLayout.createSequentialGroup()
+                            .addGap(80, 80, 80)
+                            .addComponent(Registrar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(salir))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, RegistroclieLayout.createSequentialGroup()
+                            .addComponent(jLabel4)
+                            .addGap(18, 18, 18)
+                            .addComponent(Dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(Mes, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addGroup(RegistroclieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel8)
+                                .addComponent(AÑO, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(131, Short.MAX_VALUE))
         );
         RegistroclieLayout.setVerticalGroup(
@@ -156,7 +178,11 @@ public class Cliente extends javax.swing.JFrame {
                 .addGroup(RegistroclieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(IDsuc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addGroup(RegistroclieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Registrar)
+                    .addComponent(salir))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         MenuCliente.addTab("Registro", Registroclie);
@@ -237,6 +263,14 @@ public class Cliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NombreActionPerformed
 
+    private void RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegistrarActionPerformed
+
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_salirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -285,6 +319,7 @@ public class Cliente extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> Mes;
     public javax.swing.JTextField Nombre;
     public javax.swing.JTextField RFC;
+    public javax.swing.JButton Registrar;
     public javax.swing.JPanel Registroclie;
     public javax.swing.JButton consultar;
     private javax.swing.JLabel jLabel1;
@@ -299,5 +334,6 @@ public class Cliente extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     public javax.swing.JButton out;
+    public javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
 }
