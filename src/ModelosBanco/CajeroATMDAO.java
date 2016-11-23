@@ -23,15 +23,16 @@ public class CajeroATMDAO {
     public Tarjeta Login(String tarj, String Cont){
         
         
-        Tarjeta tarjeta = null ;
+        Tarjeta tarjeta ;
         Connection Conexion = conexion.getConnection();
         try{
+             
              PreparedStatement ps = Conexion.prepareStatement("SELECT ID_Tarjeta, PIN from tarjeta WHERE Tarjeta= tarj and Contraseña=Cont");
              ps.setString(1, tarj);
              ps.setString(2, Cont);
-             
-             ResultSet rs =ps.executeQuery();
-             if(rs.next()){
+             System.out.println("aqui");
+             ResultSet rs = ps.executeQuery();
+             if(rs.next()){                
                  tarjeta = new Tarjeta();
                  tarjeta.setID_Tarjeta(rs.getInt(1));
                  tarjeta.setCVV(rs.getInt(2));
@@ -40,14 +41,17 @@ public class CajeroATMDAO {
                  tarjeta.setPIN(rs.getInt(5));   
                  System.out.println("Este es la cuenta "+tarjeta.getID_Tarjeta());
                  return tarjeta ;
-                }
+                }else{
+                 System.out.println("aqui");
+                 return null;
+             }
              
             }catch (SQLException e){
              
              return null;
                 
             }
-         return tarjeta;
+         
     }  
     
 }
