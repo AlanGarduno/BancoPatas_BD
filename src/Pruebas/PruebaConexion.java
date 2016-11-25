@@ -22,7 +22,7 @@ public class PruebaConexion
         CajeroATMDAO cajerodao= new CajeroATMDAO();
         Tarjeta tarj= new Tarjeta();
         CajeroATM cajeroatm=new CajeroATM();
-        ControladorATM controlcajero = new ControladorATM(ATMlog, cajerodao,cajeroatm, tarj );
+        ControladorATM.getInstance(ATMlog, cajerodao,cajeroatm, tarj );
         ATMlog.setVisible(true);
         
     }

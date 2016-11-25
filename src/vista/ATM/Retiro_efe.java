@@ -5,10 +5,13 @@
  */
 package vista.ATM;
 
+import Controlador.ControladorATM;
 import javax.swing.JOptionPane;
 import ModelosBanco.*;
 import ModelosUsuario.*;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -158,6 +161,11 @@ public class Retiro_efe extends javax.swing.JFrame {
         m.registrarMovimiento();
         JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
         ATM_ses ses = new ATM_ses();
+        try {
+            ses.jButton1.addActionListener(ControladorATM.getInstance());
+        } catch (Exception ex) {
+            Logger.getLogger(Consulta_Saldo.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ses.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -172,6 +180,11 @@ public class Retiro_efe extends javax.swing.JFrame {
         JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
         ATM_ses ses = new ATM_ses();
         ses.setVisible(true);
+        try {
+            ses.jButton1.addActionListener(ControladorATM.getInstance());
+        } catch (Exception ex) {
+            Logger.getLogger(Consulta_Saldo.class.getName()).log(Level.SEVERE, null, ex);
+        }
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -184,6 +197,11 @@ public class Retiro_efe extends javax.swing.JFrame {
         m.registrarMovimiento();
         JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
         ATM_ses ses = new ATM_ses();
+        try {
+            ses.jButton1.addActionListener(ControladorATM.getInstance());
+        } catch (Exception ex) {
+            Logger.getLogger(Consulta_Saldo.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ses.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -197,6 +215,11 @@ public class Retiro_efe extends javax.swing.JFrame {
         m.registrarMovimiento();
         JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
         ATM_ses ses = new ATM_ses();
+        try {
+            ses.jButton1.addActionListener(ControladorATM.getInstance());
+        } catch (Exception ex) {
+            Logger.getLogger(Consulta_Saldo.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ses.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -210,6 +233,11 @@ public class Retiro_efe extends javax.swing.JFrame {
         m.registrarMovimiento();
         JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
         ATM_ses ses = new ATM_ses();
+        try {
+            ses.jButton1.addActionListener(ControladorATM.getInstance());
+        } catch (Exception ex) {
+            Logger.getLogger(Consulta_Saldo.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ses.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -224,6 +252,11 @@ public class Retiro_efe extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         ATM_ses ses =new ATM_ses();
+        try {
+            ses.jButton1.addActionListener(ControladorATM.getInstance());
+        } catch (Exception ex) {
+            Logger.getLogger(Consulta_Saldo.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ses.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton7ActionPerformed

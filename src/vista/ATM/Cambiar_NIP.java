@@ -5,7 +5,10 @@
  */
 package vista.ATM;
 
+import Controlador.ControladorATM;
 import ModelosUsuario.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.OK_OPTION;
 
@@ -137,8 +140,13 @@ public class Cambiar_NIP extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ATM_ses prin = new ATM_ses();
-        prin.setVisible(true);
+        ATM_ses ses = new ATM_ses();
+        try {
+            ses.jButton1.addActionListener(ControladorATM.getInstance());
+        } catch (Exception ex) {
+            Logger.getLogger(Consulta_Saldo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ses.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
