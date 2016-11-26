@@ -50,6 +50,7 @@ public class Cuenta_Debito
         ResultSet rs;
         Controlador query = new Controlador();
         Cuenta cs = new Cuenta();
+        cs.setID_Cuenta(2);
         String sql = "SELECT * FROM cuenta_debito WHERE Cuenta_ID_Cuenta = '"+cs.getID_Cuenta()+"' ";
         rs = query.consultar(sql);
         try 
@@ -73,6 +74,7 @@ public class Cuenta_Debito
         ResultSet rs;
         Controlador query = new Controlador();
         Cuenta cs = new Cuenta();
+        cs.setID_Cuenta(2);
         String sql = "SELECT * FROM cuenta_debito WHERE Cuenta_ID_Cuenta = '"+cs.getID_Cuenta()+"' ";
         rs = query.consultar(sql);
         try 
@@ -81,9 +83,11 @@ public class Cuenta_Debito
             {
                 saldo = rs.getDouble("Monto");
             }
-            if(saldo > monto)
+            if(saldo >= monto)
             {
-                String update = "UPDATE cuenta_debito  SET Monto = Monto - '"+monto+"' WHERE Cuenta_ID_Cuenta = '"+cs.getID_Cuenta()+"'";
+                double res;
+                res=saldo-monto;
+                String update = "UPDATE cuenta_debito  SET Monto = '"+res+"' WHERE Cuenta_ID_Cuenta = '"+cs.getID_Cuenta()+"'";
                 query.insertar(update);
             }
             else
@@ -94,6 +98,7 @@ public class Cuenta_Debito
         {
              Logger.getLogger(Tarjeta.class.getName()).log(Level.SEVERE, null, ex);
         }
+         
         
     }
     

@@ -156,6 +156,7 @@ public class Retiro_efe extends javax.swing.JFrame {
         // TODO add your handling code here:
         cd = new Cuenta_Debito();
         cd.retiroEfectivo(50);
+        fecha = new Date();
         String f = Integer.toString(fecha.getYear()) + Integer.toString(fecha.getMonth()) + Integer.toString(fecha.getDay()); 
         m = new Movimientos(cd.getID_Cuenta(),f,50);
         m.registrarMovimiento();
@@ -172,7 +173,9 @@ public class Retiro_efe extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
         cd = new Cuenta_Debito();
+        cd.setID_Cuenta(2);
         cd.retiroEfectivo(100);
         String f = Integer.toString(fecha.getYear()) + Integer.toString(fecha.getMonth()) + Integer.toString(fecha.getDay()); 
         m = new Movimientos(cd.getID_Cuenta(),f,100);

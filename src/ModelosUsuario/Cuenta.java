@@ -24,6 +24,16 @@ public class Cuenta
     public int getID_Cliente() {
         return ID_Cliente;
     }
+
+    public void setID_Cuenta(int ID_Cuenta) {
+        this.ID_Cuenta = ID_Cuenta;
+    }
+
+    public void setID_Cliente(int ID_Cliente) {
+        this.ID_Cliente = ID_Cliente;
+    }
+    
+    
     
     
     
