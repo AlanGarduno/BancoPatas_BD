@@ -66,13 +66,13 @@ public class Cuenta_Debito
         return 0;
     }
     
-    public void retiroEfectivo(double monto)
+    public void retiroEfectivo(double monto,Tarjeta tar)
     {
         double saldo = 0;
         ResultSet rs;
         Controlador query = new Controlador();
         Cuenta cs = new Cuenta();
-        String sql = "SELECT * FROM cuenta_debito WHERE Cuenta_ID_Cuenta = '"+cs.getID_Cuenta()+"' ";
+        String sql = "SELECT * FROM cuenta_debito WHERE Cuenta_ID_Cuenta = '"+tar.getID_Cuenta()+"' ";
         rs = query.consultar(sql);
         try 
         {
@@ -84,7 +84,7 @@ public class Cuenta_Debito
             {
                 double res;
                 res=saldo-monto;
-                String update = "UPDATE cuenta_debito  SET Monto = '"+res+"' WHERE Cuenta_ID_Cuenta = '"+cs.getID_Cuenta()+"'";
+                String update = "UPDATE cuenta_debito  SET Monto = '"+res+"' WHERE Cuenta_ID_Cuenta = '"+tar.getID_Cuenta()+"'";
                 query.insertar(update);
             }
             else

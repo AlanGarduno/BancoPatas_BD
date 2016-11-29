@@ -12,7 +12,6 @@ import Controlador.Controlador;
  */
 public class Movimientos
 {
-    private int ID_Movimiento;
     private int Cuenta_ID_Cuenta;
     private String Fecha;
     private double Monto;
@@ -28,9 +27,6 @@ public class Movimientos
     public Movimientos() {
     }
 
-    public int getID_Movimiento() {
-        return ID_Movimiento;
-    }
 
     public String getFecha() {
         return Fecha;

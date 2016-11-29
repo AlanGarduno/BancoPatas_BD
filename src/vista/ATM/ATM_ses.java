@@ -125,6 +125,7 @@ public class ATM_ses extends javax.swing.JFrame {
         t.setID_Cuenta(t.inicirSes(tar, pin));
         ATM_princ s = new ATM_princ(t);
         s.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void TarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TarjetaActionPerformed

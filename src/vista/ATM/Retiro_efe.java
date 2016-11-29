@@ -22,11 +22,11 @@ public class Retiro_efe extends javax.swing.JFrame {
      * Creates new form Retiro_efe
      */
     Cuenta_Debito cd;
-    Movimientos m; 
-    Date fecha;
+    static Tarjeta tar;
     
-    public Retiro_efe() {
+    public Retiro_efe(Tarjeta tar) {
         initComponents();
+        this.tar = tar;
         this.setTitle("Retiro de efectivo");
     }
 
@@ -154,12 +154,8 @@ public class Retiro_efe extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         cd = new Cuenta_Debito();
-        cd.retiroEfectivo(50);
-        fecha = new Date();
-        String f = Integer.toString(fecha.getYear()) + Integer.toString(fecha.getMonth()) + Integer.toString(fecha.getDay()); 
-        m = new Movimientos(cd.getID_Cuenta(),f,50);
-        m.registrarMovimiento();
-        JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
+        cd.retiroEfectivo(50,tar);
+        JOptionPane.showMessageDialog(null, "Operacion exitosa");
         ATM_ses ses = new ATM_ses();
         ses.setVisible(true);
         dispose();
@@ -169,12 +165,8 @@ public class Retiro_efe extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         cd = new Cuenta_Debito();
-        cd.setID_Cuenta(2);
-        cd.retiroEfectivo(100);
-        String f = Integer.toString(fecha.getYear()) + Integer.toString(fecha.getMonth()) + Integer.toString(fecha.getDay()); 
-        m = new Movimientos(cd.getID_Cuenta(),f,100);
-        m.registrarMovimiento();
-        JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
+        cd.retiroEfectivo(100,tar);
+        JOptionPane.showMessageDialog(null, "Operacion exitosa");
         ATM_ses ses = new ATM_ses();
         ses.setVisible(true);
         dispose();
@@ -183,11 +175,8 @@ public class Retiro_efe extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         cd = new Cuenta_Debito();
-        cd.retiroEfectivo(200);
-        String f = Integer.toString(fecha.getYear()) + Integer.toString(fecha.getMonth()) + Integer.toString(fecha.getDay()); 
-        m = new Movimientos(cd.getID_Cuenta(),f,200);
-        m.registrarMovimiento();
-        JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
+        cd.retiroEfectivo(200,tar);
+        JOptionPane.showMessageDialog(null, "Operacion exitosa");
         ATM_ses ses = new ATM_ses();
         ses.setVisible(true);
         dispose();
@@ -196,11 +185,8 @@ public class Retiro_efe extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         cd = new Cuenta_Debito();
-        cd.retiroEfectivo(500);
-        String f = Integer.toString(fecha.getYear()) + Integer.toString(fecha.getMonth()) + Integer.toString(fecha.getDay()); 
-        m = new Movimientos(cd.getID_Cuenta(),f,500);
-        m.registrarMovimiento();
-        JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
+        cd.retiroEfectivo(500,tar);
+        JOptionPane.showMessageDialog(null, "Operacion exitosa");
         ATM_ses ses = new ATM_ses();
         ses.setVisible(true);
         dispose();
@@ -209,11 +195,8 @@ public class Retiro_efe extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         cd = new Cuenta_Debito();
-        cd.retiroEfectivo(1000);
-        String f = Integer.toString(fecha.getYear()) + Integer.toString(fecha.getMonth()) + Integer.toString(fecha.getDay()); 
-        m = new Movimientos(cd.getID_Cuenta(),f,1000);
-        m.registrarMovimiento();
-        JOptionPane.showConfirmDialog(null, "Desea Comprobante Impreso");
+        cd.retiroEfectivo(1000,tar);
+        JOptionPane.showMessageDialog(null, "Operacion exitosa");
         ATM_ses ses = new ATM_ses();
         ses.setVisible(true);
         dispose();
@@ -221,7 +204,7 @@ public class Retiro_efe extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        Retiro_efe_otrac reoc = new Retiro_efe_otrac();
+        Retiro_efe_otrac reoc = new Retiro_efe_otrac(tar);
         reoc.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -263,7 +246,7 @@ public class Retiro_efe extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Retiro_efe().setVisible(true);
+                new Retiro_efe(tar).setVisible(true);
             }
         });
     }
