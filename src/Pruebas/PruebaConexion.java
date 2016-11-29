@@ -3,7 +3,7 @@ package Pruebas;
 
 import Controlador.*;
 import ModelosBanco.*;
-import com.mysql.jdbc.Connection;
+
 import ModelosUsuario.*;
 import java.sql.SQLException;
 import vista.ATM.*;
