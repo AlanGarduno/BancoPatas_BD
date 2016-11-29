@@ -5,6 +5,8 @@
  */
 package vista.ATM;
 
+import ModelosUsuario.Cuenta;
+import ModelosUsuario.Tarjeta;
 import javax.swing.JOptionPane;
 
 
@@ -18,6 +20,7 @@ public class ATM_ses extends javax.swing.JFrame {
     /**
      * Creates new form atm
      */
+    Cuenta c = new Cuenta();
     public ATM_ses() {
         initComponents();
         this.setTitle("Sesión");
@@ -116,16 +119,12 @@ public class ATM_ses extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-//          if(Tarjeta.getText().length()==0 ){
-//            JOptionPane.showMessageDialog(null, "Introduzca una Cuenta valida");
-//        }if( Constraseña.getText().length()==0){
-//           JOptionPane.showMessageDialog(null, "Introduzca una contraseña correcta");
-//    }
-//        else{     
-//        ATM_princ ses = new ATM_princ();
-//        ses.setVisible(true);
-//       
-//        }
+        int tar = Integer.parseInt(Tarjeta.getText());
+        int pin = Integer.parseInt(Constraseña.getText());
+        Tarjeta t = new Tarjeta();
+        t.setID_Cuenta(t.inicirSes(tar, pin));
+        ATM_princ s = new ATM_princ(t);
+        s.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void TarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TarjetaActionPerformed

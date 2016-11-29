@@ -16,6 +16,8 @@ import java.util.*;
  */
 public class CajeroATMDAO {
     Conexion  conexion=new Conexion();
+    Tarjeta tarjeta;
+    Cuenta cuenta;
     
     public void CajeroATMDAO(){
         
@@ -23,7 +25,7 @@ public class CajeroATMDAO {
     public Tarjeta Login(String tarj, String Cont){
         
         
-        Tarjeta tarjeta ;
+        
         Connection Conexion = conexion.getConnection();
         try{
              
@@ -38,6 +40,7 @@ public class CajeroATMDAO {
                  tarjeta.setCVV(rs.getInt(2));
                  tarjeta.setVigencia(rs.getString(3));
                  tarjeta.setID_Cuenta(rs.getInt(4));
+                 cuenta.setID_Cuenta(rs.getInt(4));
                  tarjeta.setPIN(rs.getInt(5));   
                  System.out.println("Este es la cuenta "+tarjeta.getID_Tarjeta());
                  return tarjeta ;

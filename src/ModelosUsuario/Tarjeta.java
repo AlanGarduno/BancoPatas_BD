@@ -8,6 +8,7 @@ import java.sql.*;
 import Controlador.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author JCVELMON
@@ -117,6 +118,34 @@ public class Tarjeta
             Logger.getLogger(Tarjeta.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+    
+    public int inicirSes(int tar, int cont)
+    {
+        int id = 0;
+       Cuenta cs = new Cuenta();
+       ResultSet rs;
+       Controlador query = new Controlador();
+       String sql = "SELECT * FROM tarjeta WHERE ID_Tarjeta = '"+tar+"' AND PIN = '"+cont+"' ";
+       rs = query.consultar(sql);
+        try 
+        {
+            while(rs.next())
+            {
+              id = rs.getInt("Cuenta_ID_Cuenta");
+            }
+
+            cs.setID_Cuenta(id);
+            JOptionPane.showConfirmDialog(null,"Bienvenido");
+            System.out.println("id"+id);
+            this.ID_Cuenta = id;
+            return id;
+        } 
+        catch (SQLException ex)
+        {
+             Logger.getLogger(Tarjeta.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       return 2;
     }
    
     

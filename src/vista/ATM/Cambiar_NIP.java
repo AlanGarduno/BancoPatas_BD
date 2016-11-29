@@ -5,7 +5,6 @@
  */
 package vista.ATM;
 
-import Controlador.ControladorATM;
 import ModelosUsuario.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,8 +20,10 @@ public class Cambiar_NIP extends javax.swing.JFrame {
     /**
      * Creates new form Cambiar_NIP
      */
-    public Cambiar_NIP() {
+    static Tarjeta tar;
+    public Cambiar_NIP(Tarjeta tar) {
         initComponents();
+        this.tar = tar;
         this.setTitle("Cmabio de NIP");
     }
 
@@ -141,11 +142,6 @@ public class Cambiar_NIP extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         ATM_ses ses = new ATM_ses();
-        try {
-            ses.jButton1.addActionListener(ControladorATM.getInstance());
-        } catch (Exception ex) {
-            Logger.getLogger(Consulta_Saldo.class.getName()).log(Level.SEVERE, null, ex);
-        }
         ses.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -166,7 +162,7 @@ public class Cambiar_NIP extends javax.swing.JFrame {
         int pN2 =Integer.parseInt(jPasswordField3.getText());
         if(pN == pN2)
         {
-            Tarjeta tar = new Tarjeta();
+            
             tar.cambiarNIP(nA,pN2);
             JOptionPane.showMessageDialog(null, "Operacion Exitosa");
         }
@@ -245,7 +241,7 @@ public class Cambiar_NIP extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cambiar_NIP().setVisible(true);
+                new Cambiar_NIP(tar).setVisible(true);
             }
         });
     }

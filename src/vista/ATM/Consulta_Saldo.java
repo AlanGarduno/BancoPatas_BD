@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package vista.ATM;
-import Controlador.ControladorATM;
 import ModelosBanco.CajeroATMDAO;
 import ModelosUsuario.*;
 import java.util.logging.Level;
@@ -18,11 +17,12 @@ public class Consulta_Saldo extends javax.swing.JFrame {
     /**
      * Creates new form Consulta_Saldo
      */
-    public Consulta_Saldo() {
-        
+    static Tarjeta tar;
+    public Consulta_Saldo(Tarjeta tar) {
+        this.tar = tar;
         initComponents();
         Cuenta_Debito cd = new Cuenta_Debito();
-        jTextField1.setText(Double.toString(cd.consultaSaldo()));  
+        jTextField1.setText(Double.toString(cd.consultaSaldo(tar)));  
     }
 
     /**
@@ -102,11 +102,6 @@ public class Consulta_Saldo extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
          ATM_ses ses = new ATM_ses();
-        try {
-            ses.jButton1.addActionListener(ControladorATM.getInstance());
-        } catch (Exception ex) {
-            Logger.getLogger(Consulta_Saldo.class.getName()).log(Level.SEVERE, null, ex);
-        }
         ses.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -152,7 +147,7 @@ public class Consulta_Saldo extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Consulta_Saldo().setVisible(true);
+                new Consulta_Saldo(tar).setVisible(true);
             }
         });
     }

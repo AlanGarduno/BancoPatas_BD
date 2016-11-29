@@ -5,6 +5,8 @@
  */
 package vista.ATM;
 
+import ModelosUsuario.Tarjeta;
+
 /**
  *
  * @author fernando
@@ -14,8 +16,10 @@ public class ATM_princ extends javax.swing.JFrame {
     /**
      * Creates new form ATM_princ
      */
-    public ATM_princ() {
+    static Tarjeta tar;
+    public ATM_princ(Tarjeta tar) {
         initComponents();
+        this.tar = tar;
         this.setTitle("Elige una Opción");
     }
 
@@ -144,7 +148,7 @@ public class ATM_princ extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Cambiar_NIP cmab= new Cambiar_NIP();
+        Cambiar_NIP cmab= new Cambiar_NIP(tar);
         cmab.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -172,7 +176,7 @@ public class ATM_princ extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Consulta_Saldo con = new Consulta_Saldo();
+        Consulta_Saldo con = new Consulta_Saldo(tar);
         con.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -222,7 +226,7 @@ public class ATM_princ extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ATM_princ().setVisible(true);
+                new ATM_princ(tar).setVisible(true);
             }
         });
     }

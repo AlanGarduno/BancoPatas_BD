@@ -44,14 +44,12 @@ public class Cuenta_Debito
         this.ID_Cuenta = ID_Cuenta;
     }
     
-    public double consultaSaldo()
+    public double consultaSaldo(Tarjeta tar)
     {
         double monto = 0;
         ResultSet rs;
         Controlador query = new Controlador();
-        Cuenta cs = new Cuenta();
-        cs.setID_Cuenta(2);
-        String sql = "SELECT * FROM cuenta_debito WHERE Cuenta_ID_Cuenta = '"+cs.getID_Cuenta()+"' ";
+        String sql = "SELECT * FROM cuenta_debito WHERE Cuenta_ID_Cuenta = '"+tar.getID_Cuenta()+"' ";
         rs = query.consultar(sql);
         try 
         {
@@ -74,7 +72,6 @@ public class Cuenta_Debito
         ResultSet rs;
         Controlador query = new Controlador();
         Cuenta cs = new Cuenta();
-        cs.setID_Cuenta(2);
         String sql = "SELECT * FROM cuenta_debito WHERE Cuenta_ID_Cuenta = '"+cs.getID_Cuenta()+"' ";
         rs = query.consultar(sql);
         try 
