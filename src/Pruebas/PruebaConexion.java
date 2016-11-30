@@ -18,7 +18,8 @@ public class PruebaConexion
        // Cuenta c = new Cuenta();
         //Tarjeta tar = new Tarjeta( 23 ,589,"1999"+"12"+"07",46,6123);
         //tar.registrarTarjeta();
-        //ATM_ses ATMlog = new ATM_ses();
+        ATM_ses ATMlog = new ATM_ses();
+        ATMlog.setVisible(true);
         //CajeroATMDAO cajerodao= new CajeroATMDAO();
         //Tarjeta tarj= new Tarjeta();
         //CajeroATM cajeroatm=new CajeroATM();
