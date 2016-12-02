@@ -12,8 +12,8 @@ public final class Conexion
     private static Connection conn;
     private static final String driver="com.mysql.jdbc.Driver";
     private static final String user = "root";
-    private static final String pass = "root";
-    private static final String url = "jdbc:mysql://localhost:3306/mydb";
+    private static final String pass = "knd100";
+    private static final String url = "jdbc:mysql://localhost:3306/bancocdmx";
 
    
     public Conexion ()
